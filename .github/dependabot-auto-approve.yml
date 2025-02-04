@@ -1,7 +1,7 @@
 name: Dependabot Auto-Approve
 on:
   workflow_run:
-    workflows: ["Greetings"]
+    workflows: ["Android CI"]
     types:
       - completed
 
