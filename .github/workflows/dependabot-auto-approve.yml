@@ -1,9 +1,5 @@
 name: Dependabot Auto-Approve
-on:
-  workflow_run:
-    workflows: ["Android CI"]
-    types:
-      - completed
+on: pull_request
 
 jobs:
   dependabot:
