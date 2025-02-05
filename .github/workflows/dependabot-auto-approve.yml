@@ -16,12 +16,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh -y
+      # - name: Install GitHub CLI
+      #   run: sudo apt-get install gh -y
 
       - name: Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v1
+        uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
 
