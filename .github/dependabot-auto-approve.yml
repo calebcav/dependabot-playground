@@ -8,7 +8,7 @@ on:
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.actor == 'dependabot[bot]' && github.repository == 'calebcav/dependabot-playground' && github.event.workflow_run.conclusion == 'success'
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'calebcav/dependabot-playground' && github.event.workflow_run.conclusion == 'success'
     steps:
       - name: Dependabot metadata
         id: metadata
@@ -18,5 +18,5 @@ jobs:
       - name: Approve a PR
         run: gh pr review --approve "$PR_URL"
         env:
-          PR_URL: ${{ github.event.workflow_run.pull_requests[0].html_url }}
+          PR_URL: ${{ github.event.workflow_run.pull_requests.html_url }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
