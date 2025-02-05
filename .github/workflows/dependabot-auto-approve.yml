@@ -16,8 +16,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh -y
+      # - name: Install GitHub CLI
+      #   run: sudo apt-get install gh -y
 
       - name: Dependabot metadata
         id: metadata
