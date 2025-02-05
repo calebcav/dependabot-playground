@@ -1,5 +1,7 @@
 name: Dependabot Auto-Approve
 on:
+  pull-requests:
+    types: [opened]
   workflow_run:
     workflows: ["Android CI"]
     types:
@@ -8,7 +10,7 @@ on:
 jobs:
   dependabot:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'calebcav/dependabot-playground' && github.event.workflow_run.conclusion == 'success'
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.repository == 'calebcav/dependabot-playground'
     steps:
       - name: Dependabot metadata
         id: metadata
