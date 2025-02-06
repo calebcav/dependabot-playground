@@ -3,6 +3,8 @@ on: pull_request
 
 jobs:
   dependabot:
+    permissions:
+      pull-requests: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
